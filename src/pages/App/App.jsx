@@ -1,20 +1,67 @@
 import { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import * as gamesAPI from '../../utilities/games-api';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import GamesPage from '../GamesPage/GamesPage';
 import NavBar from '../../components/NavBar/NavBar';
-import NewGameForm from '../../components/NewGameForm/NewGameForm'; // Import the NewGameForm
+import NewGameForm from '../../components/NewGameForm/NewGameForm'; 
+import ReviewForm from '../../components/ReviewForm/ReviewForm';
+import EditGamePage from '../EditGamePage/EditGamePage';
+import GameDetailsPage from '../GameDetailsPage/GameDetailsPage'
 
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [games, setGames] = useState([]);
+  const navigate = useNavigate();
 
-  async function addGames(game) {
-    const newGame = await gamesAPI.create(game);
-    setGames([...games, newGame]);
+  
+
+  async function addGame(game) {
+    try {
+      
+      game.user = user._id; 
+  
+     
+      const newGame = await gamesAPI.create(game);
+      
+      
+      setGames([...games, newGame]);
+    } catch (error) {
+      console.error('Error adding game:', error);
+    }
+  }
+
+  async function deleteGame(gameId) {
+    try {
+      await gamesAPI.deleteGame(gameId);
+      
+      setGames(games.filter((game) => game._id !== gameId));
+    } catch (error) {
+      console.error('Error deleting game:', error);
+    }
+  }
+
+  async function updateGame(gameId, updatedGameData) {
+    try {
+      // Update the game
+      await gamesAPI.updateGame(gameId, updatedGameData);
+
+      const updatedGame = await gamesAPI.getGameById(gameId);
+
+     
+      setGames((prevGames) =>
+        prevGames.map((game) =>
+          game._id === gameId ? updatedGame : game
+        )
+      );
+
+      
+      navigate(`/games`);
+    } catch (error) {
+      console.error('Error updating game:', error);
+    }
   }
 
   useEffect(() => {
@@ -23,7 +70,7 @@ export default function App() {
       setGames(allGames);
     }
     getGames();
-  }, []); // Fetch games when the component mounts
+  }, []);
 
   return (
     <main className="App">
@@ -33,9 +80,22 @@ export default function App() {
           <Routes>
             <Route
               path="/games/new"
-              element={<NewGameForm addGame={addGames} />} // Pass the addGames function
+              element={<NewGameForm addGame={addGame} />}
             />
-            <Route path="/" element={<GamesPage games={games} />} />
+            <Route
+              path="/games"
+              element={<GamesPage games={games}  onDelete={deleteGame} />}
+            />
+            <Route 
+            path="/games/:id" 
+            element={<GameDetailsPage user={user}/>} 
+            />
+            <Route
+            path="/reviews/new"
+            element={<ReviewForm user={user} />}
+            />
+            <Route path="/games/:id/edit" element={<EditGamePage updateGame={updateGame} />} />
+            
           </Routes>
         </>
       ) : (

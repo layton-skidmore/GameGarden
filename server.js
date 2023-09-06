@@ -12,6 +12,7 @@ const app = express();
 app.use(logger('dev'));
 app.use(express.json());
 
+
 // Configure both serve-favicon & static middleware
 // to serve from the production 'build' folder
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
@@ -24,8 +25,16 @@ app.use(require('./config/checkToken'));
 const port = process.env.PORT || 3001;
 
 // Put API routes here, before the "catch all" route
+const ensureLoggedIn = require('./config/ensureLoggedIn');
+app.use('/api/reviews', require('./routes/api/reviews'));
 app.use('/api/users', require('./routes/api/users'));
-app.use('/api/games', require('./routes/api/games'));
+app.use('/api/games', ensureLoggedIn, require('./routes/api/games'));
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+
+
+
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX/API requests

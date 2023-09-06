@@ -9,7 +9,7 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav>
-      <Link to="/">My GameGarden</Link>
+      <Link to="/games">My GameGarden</Link>
       &nbsp; | &nbsp;
       <Link to="/games/new">New Game</Link>
       &nbsp;&nbsp;

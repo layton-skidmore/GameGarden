@@ -1,22 +1,24 @@
-import './GamesPage.css'
+import './GamesPage.css';
 import GameCard from '../../components/GameCard/GameCard';
 
-export default function GamesPage({ games }) {
+export default function GamesPage({ games, onDelete, user }) {
   return (
     <div>
       <h1>GamesPage</h1>
       {games.length ? (
-        <table className="games-table"> {/* Apply the CSS class */}
+        <table className="games-table">
           <thead>
             <tr>
               <th>Game Name</th>
               <th>Game Studio</th>
               <th>ESRB Rating</th>
+              <th>Action</th>
+              <th></th> 
             </tr>
           </thead>
           <tbody>
-            {games.map((game, idx) => (
-              <GameCard key={idx} game={game} />
+            {games.map((game) => (
+              <GameCard key={game._id} game={game} user={user} onDelete={onDelete} />
             ))}
           </tbody>
         </table>
@@ -26,3 +28,5 @@ export default function GamesPage({ games }) {
     </div>
   );
 }
+
+

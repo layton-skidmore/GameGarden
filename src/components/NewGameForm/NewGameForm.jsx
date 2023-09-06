@@ -17,7 +17,7 @@ export default function NewGameForm({ addGame }) {
       gameStudio: '',
       esrbRating: '', 
     });
-    navigate('/');
+    navigate('/games');
   }
 
   function handleChange(evt) {
