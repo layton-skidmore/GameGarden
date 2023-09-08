@@ -14,7 +14,7 @@ export default function NavBar({ user, setUser }) {
       &nbsp; | &nbsp;
       <Link to="/games/new">New Game</Link>
       &nbsp; | &nbsp;
-      <Link to="/devs">Devs</Link>
+      <Link to="/devs">Top 10</Link>
       &nbsp; | &nbsp;
       <Link to="/contest">Contest</Link>
       <span>Welcome, {user.name}</span>
