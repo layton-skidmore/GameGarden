@@ -1,0 +1,43 @@
+
+.new-game-form {
+    background-color: var(--gray-1); /* Use a light gray background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    text-align: center;
+    color: var(--text-dark);
+  }
+  
+  .new-game-form h2 {
+    color: var(--emerald); /* Use emerald for the form title color */
+    margin-bottom: 20px;
+  }
+  
+  .new-game-form input,
+  .new-game-form select {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border: 2px solid var(--gray-3); /* Use a light gray border */
+    border-radius: 5px;
+    font-size: 18px;
+  }
+  
+  .new-game-form select {
+    background-color: var(--white); /* Use a white background for the select */
+  }
+  
+  .new-game-form .add-game-button {
+    background-color: var(--emerald);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add a smooth background color transition on hover */
+  }
+  
+  .new-game-form .add-game-button:hover {
+    background-color: var(--gray-2); /* Change button background color on hover */
+  }

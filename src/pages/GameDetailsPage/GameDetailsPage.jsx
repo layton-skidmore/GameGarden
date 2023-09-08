@@ -1,27 +1,47 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getGameById } from '../../utilities/games-api';
 import ReviewForm from '../../components/ReviewForm/ReviewForm';
+import './GameDetailsPage.css';
 
-export default function GameDetailsPage( user ) {
-  const { id } = useParams(); // Get the game ID from the URL parameter
-  const [game, setGame] = useState(null); // State to store the game details
-  const [reviews, setReviews] = useState([]); // State to store reviews
-  const [hasUserReviewed, setHasUserReviewed] = useState(false); // Track if the user has reviewed the game
+export default function GameDetailsPage({ user }) {
+  const { id } = useParams();
+  const [game, setGame] = useState(null);
+  const [reviews, setReviews] = useState([]);
+  const [hasUserReviewed, setHasUserReviewed] = useState(false);
+
   
+  function calculateOverallScore(reviews) {
+    if (reviews.length === 0) {
+      return 0; 
+    }
+
+    const totalScore = reviews.reduce(
+      (total, review) =>
+        total +
+        (review.storyRating +
+          review.gameplayRating +
+          review.graphicsRating +
+          review.audioRating) /
+          4,
+      0
+    );
+
+    return (totalScore / reviews.length).toFixed(1);
+  }
 
   useEffect(() => {
     async function fetchGameDetails() {
       try {
         const response = await getGameById(id);
-        console.log("API Response:", response);
         setGame(response);
-        setReviews(response.reviews || []); // Assuming the reviews are stored in the 'reviews' property
-        // Check if the user has already reviewed the game
-        const userHasReviewed = response.reviews.some(review => review.user === user._id);
+        setReviews(response.reviews || []);
+        const userHasReviewed = response.reviews.some(
+          (review) => review.user === user._id
+        );
         setHasUserReviewed(userHasReviewed);
       } catch (error) {
-        console.error("Error fetching game details:", error);
+        console.error('Error fetching game details:', error);
       }
     }
 
@@ -29,39 +49,49 @@ export default function GameDetailsPage( user ) {
   }, [user._id, id]);
 
   return (
-    <div>
-      <h1>Game Details</h1>
+    <div className="game-details-container">
+      <h1 className="game-title">Game Details</h1>
       {game ? (
-        <div>
-          <h2>{game.name}</h2>
-          <h2>{game.gameStudio}</h2>
-          {/* Display other game details here */}
+        <div className="game-info">
+          <h2 className="game-name">{game.name}</h2>
+          <h2 className="game-studio">{game.gameStudio}</h2>
         </div>
       ) : (
         <p>Loading...</p>
       )}
 
-      {/* Conditional rendering of the ReviewForm component */}
       {!hasUserReviewed && <ReviewForm gameId={id} />}
 
-      {/* Display reviews */}
       {reviews.length > 0 ? (
-        <div>
-          <h2>Reviews</h2>
-          <ul>
+        <div className="reviews-section">
+          <h2 className="reviews-title">Reviews</h2>
+          <ul className="reviews-list">
             {reviews.map((review, index) => (
-              <li key={index}>
-                <p>Review Text: {review.text}</p>
-                <p>Review Score: {review.score}</p>
+              <li key={index} className="review-item">
+                <p className="review-text">{review.text}</p>
+                <p className="review-score">Review Score: {review.score}</p>
+                <p className="review-story-rating">
+                  Story Rating: {review.storyRating}
+                </p>
+                <p className="review-gameplay-rating">
+                  Gameplay Rating: {review.gameplayRating}
+                </p>
+                <p className="review-graphics-rating">
+                  Graphics Rating: {review.graphicsRating}
+                </p>
+                <p className="review-audio-rating">
+                  Audio Rating: {review.audioRating}
+                </p>
               </li>
             ))}
           </ul>
+          <p className="overall-score">
+            Overall Score: {calculateOverallScore(reviews)}
+          </p>
         </div>
       ) : (
-        <p>No reviews available</p>
+        <p className="no-reviews">No reviews available</p>
       )}
     </div>
   );
 }
-
-

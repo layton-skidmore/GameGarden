@@ -1,23 +1,27 @@
+
+
 .games-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  .games-table th {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-  }
-  
-  .games-table th,
-  .games-table td {
-    border: 1px solid #ccc;
-    text-align: left;
-  }
-  
-  .no-games {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.games-table th {
+  background-color: var(--emerald);
+  color: #fff;
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #007BFF;
+}
+
+.games-table th,
+.games-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.no-games {
+  text-align: center;
+  margin-top: 20px;
+}

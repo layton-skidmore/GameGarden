@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { submitReviewToServer } from '../../utilities/reviews-api';
 
@@ -10,7 +10,10 @@ export default function ReviewForm() {
 
   const [review, setReview] = useState({
     text: '',
-    score: 1,
+    storyRating: 1,
+    gameplayRating: 1,
+    graphicsRating: 1,
+    audioRating: 1,
   });
   const [submittedReview, setSubmittedReview] = useState(null);
 
@@ -19,7 +22,10 @@ export default function ReviewForm() {
       const newReview = {
         id: id,
         text: review.text,
-        score: review.score,
+        storyRating: review.storyRating,
+        gameplayRating: review.gameplayRating,
+        graphicsRating: review.graphicsRating,
+        audioRating: review.audioRating,
       };
 
       console.log('Submitting review:', newReview);
@@ -57,12 +63,51 @@ export default function ReviewForm() {
           />
         </div>
         <div>
-          <label htmlFor="score">Score:</label>
+          <label htmlFor="storyRating">Story Rating:</label>
           <input
             type="number"
-            id="score"
-            name="score"
-            value={review.score}
+            id="storyRating"
+            name="storyRating"
+            value={review.storyRating}
+            min="1"
+            max="10"
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="gameplayRating">Gameplay Rating:</label>
+          <input
+            type="number"
+            id="gameplayRating"
+            name="gameplayRating"
+            value={review.gameplayRating}
+            min="1"
+            max="10"
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="graphicsRating">Graphics Rating:</label>
+          <input
+            type="number"
+            id="graphicsRating"
+            name="graphicsRating"
+            value={review.graphicsRating}
+            min="1"
+            max="10"
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="audioRating">Audio Rating:</label>
+          <input
+            type="number"
+            id="audioRating"
+            name="audioRating"
+            value={review.audioRating}
             min="1"
             max="10"
             onChange={handleInputChange}
@@ -73,13 +118,15 @@ export default function ReviewForm() {
           <button type="submit">Submit Review</button>
         </div>
       </form>
-
+  
       {submittedReview && (
         <div>
           <h3>Your Review:</h3>
           <p>Text: {submittedReview.text}</p>
-          <p>Score: {submittedReview.score}</p>
-          
+          <p>Story Rating: {submittedReview.storyRating}</p>
+          <p>Gameplay Rating: {submittedReview.gameplayRating}</p>
+          <p>Graphics Rating: {submittedReview.graphicsRating}</p>
+          <p>Audio Rating: {submittedReview.audioRating}</p>
         </div>
       )}
     </div>

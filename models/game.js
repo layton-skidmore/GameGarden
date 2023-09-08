@@ -4,14 +4,32 @@ const Schema = mongoose.Schema;
 const reviewSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
-    ref: 'User', 
+    ref: 'User',
     required: true,
   },
   text: {
     type: String,
     required: true,
   },
-  score: {
+  storyRating: {
+    type: Number,
+    min: 1,
+    max: 10,
+    required: true,
+  },
+  gameplayRating: {
+    type: Number,
+    min: 1,
+    max: 10,
+    required: true,
+  },
+  graphicsRating: {
+    type: Number,
+    min: 1,
+    max: 10,
+    required: true,
+  },
+  audioRating: {
     type: Number,
     min: 1,
     max: 10,

@@ -9,7 +9,9 @@ import NavBar from '../../components/NavBar/NavBar';
 import NewGameForm from '../../components/NewGameForm/NewGameForm'; 
 import ReviewForm from '../../components/ReviewForm/ReviewForm';
 import EditGamePage from '../EditGamePage/EditGamePage';
-import GameDetailsPage from '../GameDetailsPage/GameDetailsPage'
+import DevPage from '../DevPage/DevPage';
+import GameDetailsPage from '../GameDetailsPage/GameDetailsPage';
+import ContestPage from '../ContestPage/ContestPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -20,13 +22,8 @@ export default function App() {
 
   async function addGame(game) {
     try {
-      
       game.user = user._id; 
-  
-     
       const newGame = await gamesAPI.create(game);
-      
-      
       setGames([...games, newGame]);
     } catch (error) {
       console.error('Error adding game:', error);
@@ -36,7 +33,6 @@ export default function App() {
   async function deleteGame(gameId) {
     try {
       await gamesAPI.deleteGame(gameId);
-      
       setGames(games.filter((game) => game._id !== gameId));
     } catch (error) {
       console.error('Error deleting game:', error);
@@ -45,19 +41,13 @@ export default function App() {
 
   async function updateGame(gameId, updatedGameData) {
     try {
-      // Update the game
       await gamesAPI.updateGame(gameId, updatedGameData);
-
-      const updatedGame = await gamesAPI.getGameById(gameId);
-
-     
+      const updatedGame = await gamesAPI.getGameById(gameId)
       setGames((prevGames) =>
         prevGames.map((game) =>
           game._id === gameId ? updatedGame : game
         )
       );
-
-      
       navigate(`/games`);
     } catch (error) {
       console.error('Error updating game:', error);
@@ -83,8 +73,8 @@ export default function App() {
               element={<NewGameForm addGame={addGame} />}
             />
             <Route
-              path="/games"
-              element={<GamesPage games={games}  onDelete={deleteGame} />}
+              path="/"
+              element={<GamesPage games={games} user={user}  onDelete={deleteGame} />}
             />
             <Route 
             path="/games/:id" 
@@ -94,8 +84,17 @@ export default function App() {
             path="/reviews/new"
             element={<ReviewForm user={user} />}
             />
-            <Route path="/games/:id/edit" element={<EditGamePage updateGame={updateGame} />} />
-            
+            <Route 
+            path="/games/:id/edit" 
+            element={<EditGamePage updateGame={updateGame} />} />
+            <Route 
+            path="/devs" 
+            element={<DevPage />} 
+            />
+            <Route
+            path="/contest"
+            element={<ContestPage />}
+            />
           </Routes>
         </>
       ) : (

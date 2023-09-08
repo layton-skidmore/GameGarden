@@ -1,0 +1,104 @@
+
+.game-details-container {
+    background-color: var(--gray-1);
+    padding: 2vmin;
+    border-radius: 1vmin;
+    margin: 2vmin;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+
+  .game-title {
+    font-size: 3vmin;
+    color: var(--emerald);
+    text-align: center;
+  }
+  
+
+  .game-info {
+    margin-top: 2vmin;
+    padding: 2vmin;
+    background-color: var(--gray-2);
+    border-radius: 1vmin;
+    text-align: center;
+  }
+  
+  .game-name {
+    font-size: 2.5vmin;
+    color: var(--text-dark);
+  }
+  
+  .game-studio {
+    font-size: 2vmin;
+    color: var(--emerald);
+  }
+  
+
+  .review-form {
+    margin-top: 2vmin;
+  }
+  
+  
+  .reviews-section {
+    margin-top: 2vmin;
+    padding: 2vmin;
+    background-color: var(--gray-2);
+    border-radius: 1vmin;
+    text-align: center;
+  }
+  
+  .reviews-title {
+    font-size: 2.5vmin;
+    color: var(--text-dark);
+  }
+  
+  .reviews-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .review-item {
+    margin-top: 1vmin;
+    padding: 1vmin;
+    background-color: var(--gray-3);
+    border-radius: 1vmin;
+    white-space: pre-wrap !important;
+  }
+  
+  .review-text {
+    font-size: 4vmin;
+    color: var(--text-dark);
+    white-space: pre-wrap !important;
+  }
+  
+  .review-score {
+    font-size: 2vmin;
+    color: var(--emerald);
+  }
+  
+
+  .no-reviews {
+    font-size: 2vmin;
+    color: var(--text-light);
+    text-align: center;
+    margin-top: 2vmin;
+  }
+  
+
+  .loading-message {
+    font-size: 2vmin;
+    color: var(--text-light);
+    text-align: center;
+    margin-top: 2vmin;
+  }
+
+.no-reviews {
+    font-size: 1000px;
+}
+  
+
+  @media (max-width: 768px) {
+    .game-details-container {
+      margin: 0;
+    }
+  }

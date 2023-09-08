@@ -72,34 +72,32 @@ async function deleteGame(req, res) {
 }
 
 async function update(req, res) {
-    try {
-      const gameId = req.params.id;
-      const updatedGameData = req.body; 
-  
-      console.log('Updating game with ID:', gameId);
-      console.log('Updated game data:', updatedGameData);
-  
-      
-      const game = await Game.findById(gameId);
-  
-      if (!game) {
-        console.log('Game not found for ID:', gameId);
-        return res.status(404).json({ error: 'Game not found' });
-      }
-  
-     
-      game.name = updatedGameData.name || game.name;
-      game.gameStudio = updatedGameData.gameStudio || game.gameStudio;
-  
-  
-     
-      await game.save();
-  
-      console.log('Game updated successfully:', game);
-  
-      res.status(200).json(game); 
-    } catch (error) {
-      console.error('Error updating game:', error);
-      res.status(500).json({ error: 'An error occurred while updating the game' });
+  try {
+    // Get the game ID from the request parameters
+    const gameId = req.params.id;
+
+    // Get the updated game data from the request body
+    const updatedGameData = req.body;
+
+    // Find the game by its ID
+    const game = await Game.findById(gameId);
+
+    // If the game is not found, return a 404 error
+    if (!game) {
+      return res.status(404).json({ error: 'Game not found' });
     }
+
+    // Update the game properties with the new data (if provided)
+    game.name = updatedGameData.name || game.name;
+    game.gameStudio = updatedGameData.gameStudio || game.gameStudio;
+
+    // Save the updated game data
+    await game.save();
+
+    // Send a success response with the updated game data
+    res.status(200).json(game);
+  } catch (error) {
+    // Handle errors and send a 500 internal server error response
+    res.status(500).json({ error: 'An error occurred while updating the game' });
   }
+}

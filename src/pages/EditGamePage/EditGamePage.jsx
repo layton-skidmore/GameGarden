@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getGameById } from '../../utilities/games-api';
+import './EditGamePage.css'; 
 
 export default function EditGamePage({ updateGame }) {
   const { id } = useParams();
@@ -8,9 +9,8 @@ export default function EditGamePage({ updateGame }) {
   const [updatedGameData, setUpdatedGameData] = useState({
     name: '',
     gameStudio: '',
-    
   });
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchGameDetails() {
@@ -20,7 +20,6 @@ export default function EditGamePage({ updateGame }) {
         setUpdatedGameData({
           name: response.name,
           gameStudio: response.gameStudio,
-          
         });
       } catch (error) {
         console.error("Error fetching game details:", error);
@@ -35,7 +34,7 @@ export default function EditGamePage({ updateGame }) {
       console.log('Updating game with data:', updatedGameData);
       await updateGame(id, updatedGameData);
       console.log('Game updated successfully');
-       
+
       navigate(`/games/${id}`);
     } catch (error) {
       console.error("Error updating game:", error);
@@ -43,12 +42,13 @@ export default function EditGamePage({ updateGame }) {
   };
 
   return (
-    <div>
-      <h1>Edit Game</h1>
+    <div className="edit-game-container">
+      <h1 className="edit-game-title">Edit Game</h1>
       {game ? (
-        <div>
-          <label>Name:</label>
+        <div className="edit-form">
+          <label className="label">Name:</label>
           <input
+            className="input"
             type="text"
             value={updatedGameData.name}
             onChange={(e) =>
@@ -56,8 +56,9 @@ export default function EditGamePage({ updateGame }) {
             }
           />
 
-          <label>Game Studio:</label>
+          <label className="label">Game Studio:</label>
           <input
+            className="input"
             type="text"
             value={updatedGameData.gameStudio}
             onChange={(e) =>
@@ -68,12 +69,12 @@ export default function EditGamePage({ updateGame }) {
             }
           />
 
-          
-          
-          <button onClick={handleUpdateClick}>Update</button>
+          <button className="update-button" onClick={handleUpdateClick}>
+            Update
+          </button>
         </div>
       ) : (
-        <p>Loading...</p>
+        <p className="loading-message">Loading...</p>
       )}
     </div>
   );

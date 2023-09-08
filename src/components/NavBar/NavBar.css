@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar {
+    background-color: var(--emerald);
+    padding: 10px;
+    color: white;
+    margin: 0;
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+  
+  .navbar span {
+    color: white;
+    margin-right: 10px;
+  }
