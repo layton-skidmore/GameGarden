@@ -23,7 +23,10 @@ export default function GamesPage({ games, onDelete, user }) {
           </tbody>
         </table>
       ) : (
-        <p className="no-games">No Games Yet</p>
+        <div className="no-games">
+          <p>No Games Yet</p>
+          <img className="graphic" src="https://i.imgur.com/Rj4bGWN.jpg" alt="" />
+        </div>
       )}
     </div>
   );

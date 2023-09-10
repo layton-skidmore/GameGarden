@@ -13,10 +13,14 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: var(--gray-4);
-  background-image: url(https://images.pexels.com/photos/6985185/pexels-photo-6985185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+  background-image: url(https://images.pexels.com/photos/6985185/pexels-photo-6985185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   padding: 2vmin;
   height: 100vh;
 }
+
 
 code {
   font-family: Arial, sans-serif;

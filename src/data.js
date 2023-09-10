@@ -58,7 +58,54 @@ const devs = [
   {
     name: 'Valve',
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Valve-logo.jpg/1200px-Valve-logo.jpg'
+  },
+  {
+    name: 'Capcom',
+    imageUrl: 'https://s3-symbol-logo.tradingview.com/capcom--600.png'
+  },
+  {
+    name: 'SEGA',
+    imageUrl: 'https://eu-images.contentstack.com/v3/assets/blt95b381df7c12c15d/blt6e9d7999e6151409/6254186ef80a9b6d501933fa/Sega_.png?quality=80&format=jpg&width=828'
+  },
+  {
+    name: 'Insomniac',
+    imageUrl: 'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/214677124_10159737971199853_8839568369402348054_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=LR1pozjiE6wAX9nreW0&_nc_ht=scontent-ord5-2.xx&oh=00_AfCDIFZmyq-mif22h7dL8QQ-RBtl24FVwjFt-YDKHSRsfg&oe=6503069C'
+
+  },
+  {
+    name: 'Naughty Dog',
+    imageUrl: 'https://m.media-amazon.com/images/I/519ETPv1yKL.jpg'
+
+  },
+  {
+  name: 'Obsidian',
+  imageUrl: 'https://i0.wp.com/xboxera.com/wp-content/uploads/2019/12/Obsidian.jpg?fit=740%2C417&ssl=1'
+  },
+  {
+  name: 'Respawn',
+  imageUrl: 'https://www.videogameschronicle.com/files/2019/03/LOGO_400px.jpg'
+  },
+  {
+  name: 'Gearbox',
+  imageUrl: 'https://i.ytimg.com/vi/ih2S6wGR_oA/maxresdefault.jpg'
+  },
+  {
+    name: 'Kojima',
+    imageUrl: 'https://m.media-amazon.com/images/M/MV5BZTQ4YjUzMWItZmMwMS00YjAwLWFkNDktYjVkYjg2ZjFhNjMwXkEyXkFqcGdeQXVyNzU3Nzk4MDQ@._V1_FMjpg_UX1000_.jpg'
+  },
+  {
+    name: 'Supermassive',
+    imageUrl: 'https://baystatepatent.com/wp-content/uploads/2013/04/supermassive.jpg'
+  },
+  {
+  name: 'RARE',
+  imageUrl: 'https://wholesgame.com/wp-content/uploads/Rare-Limited-Logo-Thumb-Square.jpg'
+  },
+  {
+  name: 'Treyarch',
+  imageUrl: 'https://www.insidexbox.de/wp-content/uploads/2015/02/treyarch-logo.jpg'
   }
+
 ];
 
   

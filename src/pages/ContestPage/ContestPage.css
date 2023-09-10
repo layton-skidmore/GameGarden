@@ -1,0 +1,36 @@
+.side-by-side {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 200px;
+    justify-content: end; /* Move the content to the right within the grid container */
+  }
+  
+  .starfield-cover {
+    height: 615px;
+    width: 500px;
+    justify-self: end;
+    border: 7.5px outset rgb(180, 178, 178); /* Move the starfield cover to the right within its column */
+  }
+  
+  .whiteboard {
+    max-width: 100%;
+  }
+
+  .contest-info-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border: 4px solid var(--emerald); 
+    border-radius: 20px; 
+    padding: 20px; 
+    margin-top: 20px; 
+    background-color: #f0f0f0; 
+  }
+  
+  @media screen and (min-width: 768px) {
+    .contest-page {
+      justify-content: flex-end; /* Move the content to the right for larger screens */
+    }
+  }

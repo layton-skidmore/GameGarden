@@ -9,11 +9,29 @@ export default function WhiteBoard() {
     const [lastY, setLastY] = useState(0);
     const [currentColor, setCurrentColor] = useState('black'); 
 
-    const clearBoard = () => {
+
+    const handleMouseMove = (e) => {
+        if (!isDrawing) return;
+
         const board = boardRef.current;
         const context = board.getContext('2d');
-        context.clearRect(0, 0, board.width, board.height);
+        const currentX = e.nativeEvent.offsetX;
+        const currentY = e.nativeEvent.offsetY;
+
+        context.strokeStyle = isErasing ? 'white' : currentColor; 
+        context.lineWidth = 5;
+        context.lineCap = 'round';
+
+        context.beginPath();
+        context.moveTo(lastX, lastY);
+        context.lineTo(currentX, currentY);
+        context.stroke();
+
+        setLastX(currentX);
+        setLastY(currentY);
     };
+
+    
 
     const toggleEraser = () => {
         setIsErasing((prevIsErasing) => !prevIsErasing);
@@ -27,28 +45,7 @@ export default function WhiteBoard() {
         setLastX(e.clientX - boardRect.left);
         setLastY(e.clientY - boardRect.top);
     };
-
-    const handleMouseMove = (e) => {
-        if (!isDrawing) return;
-
-        const board = boardRef.current;
-        const context = board.getContext('2d');
-        const currentX = e.nativeEvent.offsetX;
-        const currentY = e.nativeEvent.offsetY;
-
-        context.strokeStyle = isErasing ? 'white' : currentColor; // Use currentColor
-        context.lineWidth = 5;
-        context.lineCap = 'round';
-
-        context.beginPath();
-        context.moveTo(lastX, lastY);
-        context.lineTo(currentX, currentY);
-        context.stroke();
-
-        setLastX(currentX);
-        setLastY(currentY);
-    };
-
+    
     const handleMouseUp = () => {
         setIsDrawing(false);
     };
@@ -57,12 +54,18 @@ export default function WhiteBoard() {
         setIsDrawing(false);
     };
 
+    const clearBoard = () => {
+        const board = boardRef.current;
+        const context = board.getContext('2d');
+        context.clearRect(0, 0, board.width, board.height);
+    };
+
     return (
         <div>
             <canvas className="board"
                 ref={boardRef}
-                width={650}
-                height={650}
+                width={500}
+                height={600}
                 onMouseDown={handleMouseDown}
                 onMouseMove={handleMouseMove}
                 onMouseUp={handleMouseUp}

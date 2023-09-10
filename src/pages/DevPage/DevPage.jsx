@@ -6,7 +6,7 @@ export default function DevPage() {
   const [selectedDevs, setSelectedDevs] = useState([]);
 
   const handleDevSelection = (developer) => {
-    // Toggle the selection status of the developer
+
     setSelectedDevs((prevSelectedDevs) => {
       if (prevSelectedDevs.includes(developer)) {
         return prevSelectedDevs.filter((dev) => dev !== developer);
@@ -18,7 +18,10 @@ export default function DevPage() {
 
   return (
     <div>
-      <h1>Top 10 Game Developer Studios</h1>
+    <div className="contest-info-container">
+      <h1>Weekly Top 10 (9/10/23-9/16/23)</h1>
+      <p>Select your Top 10 game studios!</p> 
+    </div>
       <div className="developer-container">
         <div className="developer-list">
           {devs.map((developer) => (

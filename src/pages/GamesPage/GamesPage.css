@@ -1,4 +1,7 @@
-
+.graphic {
+  height: 200px;
+  width: 200px;
+}
 
 .games-table {
   width: 100%;
