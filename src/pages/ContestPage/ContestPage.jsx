@@ -5,7 +5,7 @@ export default function ContestPage() {
     return (
         <div className="contest-page">
             <div className="contest-info-container">
-            <h1 className="contest-title">This Week's Challenge (9/10/23-9/16/23)</h1>
+            <h1 className="contest-title">Weekly Challenge (9/10/23-9/16/23)</h1>
                 <p className="contest-description">
                     Draw the cover of Bethesda Softwork's newly released title "Starfield" to win the game for free. Only 1 winner will be selected.
                 </p>

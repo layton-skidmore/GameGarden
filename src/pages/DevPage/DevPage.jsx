@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { devs } from '../../data';
 import './DevPage.css';
 
-export default function DevPage() {
+export default function DevPage( user ) {
   const [selectedDevs, setSelectedDevs] = useState([]);
 
   const handleDevSelection = (developer) => {
@@ -41,7 +41,7 @@ export default function DevPage() {
           ))}
         </div>
         <div className="selected-dev-container">
-          <h2>Your Selected Dev Studios:</h2>
+          <h2>Your Top 10 Game Studios:</h2>
           <div className="selected-devs">
             {selectedDevs.map((developer) => (
               <div key={developer.id} className="selected-dev-item">

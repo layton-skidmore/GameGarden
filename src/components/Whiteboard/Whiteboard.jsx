@@ -31,8 +31,6 @@ export default function WhiteBoard() {
         setLastY(currentY);
     };
 
-    
-
     const toggleEraser = () => {
         setIsErasing((prevIsErasing) => !prevIsErasing);
         setIsDrawing(false);
@@ -45,7 +43,7 @@ export default function WhiteBoard() {
         setLastX(e.clientX - boardRect.left);
         setLastY(e.clientY - boardRect.top);
     };
-    
+
     const handleMouseUp = () => {
         setIsDrawing(false);
     };

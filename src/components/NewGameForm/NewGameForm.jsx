@@ -60,6 +60,12 @@ export default function NewGameForm({ addGame }) {
           Add Game
         </button>
       </form>
+      <img
+        src="https://cdn.pixabay.com/photo/2016/06/29/14/12/joystick-1486898_1280.png"
+        alt="Game Controller"
+        className="game-controller-image"
+      />
     </div>
+
   );
 }

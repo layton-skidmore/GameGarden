@@ -64,7 +64,7 @@ export default function GameDetailsPage({ user }) {
 
       {reviews.length > 0 ? (
         <div className="reviews-section">
-          <h2 className="reviews-title">Reviews</h2>
+          {/* <h2 className="reviews-title">Reviews</h2> */}
           <ul className="reviews-list">
             {reviews.map((review, index) => (
               <li key={index} className="review-item">

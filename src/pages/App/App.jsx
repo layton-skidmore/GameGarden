@@ -89,7 +89,7 @@ export default function App() {
             element={<EditGamePage updateGame={updateGame} />} />
             <Route 
             path="/devs" 
-            element={<DevPage />} 
+            element={<DevPage user={user}/>} 
             />
             <Route
             path="/contest"

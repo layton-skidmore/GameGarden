@@ -4,7 +4,7 @@ import GameCard from '../../components/GameCard/GameCard';
 export default function GamesPage({ games, onDelete, user }) {
   return (
     <div className="games-page">
-      <h1> {user.name}'s GamesPage</h1>
+      <h1> {user.name}'s GameGarden</h1>
       {games.length ? (
         <table className="games-table">
           <thead>
