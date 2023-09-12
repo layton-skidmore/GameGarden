@@ -54,6 +54,13 @@ export default function GameDetailsPage({ user }) {
         <div className="game-info">
           <h2 className="game-name">{game.name}</h2>
           <h2 className="game-studio">{game.gameStudio}</h2>
+          {game.imageUrl && (
+            <img
+              src={game.imageUrl}
+              alt={`Image for ${game.name}`}
+              className="game-image"
+            />
+          )}
         </div>
       ) : (
         <p>Loading...</p>
@@ -75,11 +82,11 @@ export default function GameDetailsPage({ user }) {
               </li>
             ))}
           </ul>
-          <div className="overall-score-container">
-            <p className="overall-score">
-             {calculateOverallScore(reviews)}
-            </p>
-          </div>
+        <div className="overall-score-container">
+          <p className={`overall-score ${calculateOverallScore(reviews) >= 5 ? 'green' : 'red'}`}>
+            {calculateOverallScore(reviews)}
+          </p>
+        </div> 
         </div>
       ) : (
         <p className="no-reviews">No reviews available</p>

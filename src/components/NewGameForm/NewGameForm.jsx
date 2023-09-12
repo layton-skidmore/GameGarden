@@ -7,6 +7,7 @@ export default function NewGameForm({ addGame, user }) {
     name: '',
     gameStudio: '',
     esrbRating: '',
+    imageUrl: '', // Add imageUrl field to the newGame state
   });
   const navigate = useNavigate();
 
@@ -18,6 +19,7 @@ export default function NewGameForm({ addGame, user }) {
       name: '',
       gameStudio: '',
       esrbRating: '',
+      imageUrl: '', // Clear imageUrl field after submission
     });
     navigate('/');
   }
@@ -57,6 +59,13 @@ export default function NewGameForm({ addGame, user }) {
           <option value="T">T</option>
           <option value="M">M</option>
         </select>
+        <input
+          type="text"
+          name="imageUrl" // Add input field for imageUrl
+          value={newGame.imageUrl}
+          onChange={handleChange}
+          placeholder="Image URL"
+        />
         <button type="submit" className="add-game-button">
           Add Game
         </button>
@@ -66,8 +75,6 @@ export default function NewGameForm({ addGame, user }) {
         alt="Game Controller"
         className="game-controller-image"
       />
-      
     </div> 
-
   );
 }

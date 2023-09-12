@@ -56,7 +56,11 @@ const gameSchema = new Schema({
     ref: 'User',
     required: true,
   },
-  reviews: [reviewSchema], 
+  imageUrl: {
+    type: String, 
+    required: false, 
+  },
+  reviews: [reviewSchema],
 });
 
 module.exports = mongoose.model('Game', gameSchema);

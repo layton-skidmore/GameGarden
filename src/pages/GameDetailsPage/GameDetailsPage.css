@@ -67,9 +67,10 @@
   }
   
   .review-text {
-    font-size: 4vmin;
+    font-size: 3vmin;
     color: var(--text-dark);
     white-space: pre-wrap !important;
+    word-wrap: break-word; 
   }
   
   .review-score {
@@ -151,4 +152,20 @@
     background-color: var(--emerald); 
     color: white; 
   }
+
+  .game-image {
+    height: 40vmin;
+    width: 40vmin;
+  }
+
+.green {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .red {
+    color: red;
+    font-weight: bold;
+  }
+
 

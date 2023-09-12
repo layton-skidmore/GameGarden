@@ -10,7 +10,7 @@ module.exports = {
 
 async function create(req, res) {
   try {
-    const { name, gameStudio, esrbRating } = req.body;
+    const { name, gameStudio, esrbRating, imageUrl } = req.body;
     const user = req.user;
 
     console.log('Received user ID:', user._id);
@@ -19,6 +19,7 @@ async function create(req, res) {
       name,
       gameStudio,
       esrbRating,
+      imageUrl, // Include imageUrl in the new game object
       user: user._id,
     });
 
@@ -29,6 +30,7 @@ async function create(req, res) {
     res.status(500).json({ message: 'An error occurred' });
   }
 }
+
 
 async function index(req, res) {
     try {
