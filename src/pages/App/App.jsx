@@ -22,7 +22,7 @@ export default function App() {
 
   async function addGame(game, userId) {
     try {
-        game.user = userId; // Set the user ID for the game
+        game.user = userId; 
         const newGame = await gamesAPI.create(game);
         setGames([...games, newGame]);
     } catch (error) {
@@ -56,11 +56,28 @@ export default function App() {
 
   useEffect(() => {
     async function getGames() {
+      console.log('User ID:', user._id);
       const allGames = await gamesAPI.index();
-      setGames(allGames);
+      console.log('All Games:', allGames);
+    
+      const userGames = allGames.filter((game) => {
+        console.log(`Game User ID: ${game.user}`);
+        return game.user === user._id;
+      });
+    
+      console.log('User Games:', userGames);
+    
+      setGames(userGames);
     }
-    getGames();
-  }, []);
+  
+    if (user) {
+      console.log('User is authenticated:', user);
+      getGames();
+    } else {
+      console.log('User is not authenticated');
+      setGames([]);
+    }
+  }, [user]);
 
   return (
     <main className="App">

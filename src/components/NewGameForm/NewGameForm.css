@@ -39,7 +39,7 @@
   }
   
   .new-game-form .add-game-button:hover {
-    background-color: var(--gray-2); 
+    background-color: #006400; 
   }
 
   .game-controller-image {

@@ -50,7 +50,6 @@ export default function GameDetailsPage({ user }) {
 
   return (
     <div className="game-details-container">
-      <h1 className="game-title">Game Details</h1>
       {game ? (
         <div className="game-info">
           <h2 className="game-name">{game.name}</h2>
@@ -64,7 +63,6 @@ export default function GameDetailsPage({ user }) {
 
       {reviews.length > 0 ? (
         <div className="reviews-section">
-          {/* <h2 className="reviews-title">Reviews</h2> */}
           <ul className="reviews-list">
             {reviews.map((review, index) => (
               <li key={index} className={`review-item ${index % 2 === 0 ? 'even-item' : 'odd-item'}`}>
