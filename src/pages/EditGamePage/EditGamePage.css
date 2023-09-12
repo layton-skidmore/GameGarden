@@ -1,4 +1,4 @@
-/* Edit Game Container */
+
 .edit-game-container {
     background-color: var(--gray-1);
     padding: 2vmin;
@@ -7,29 +7,29 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
   
-  /* Edit Game Title */
+  
   .edit-game-title {
     font-size: 3vmin;
     color: var(--emerald);
     text-align: center;
   }
   
-  /* Edit Form */
+
   .edit-form {
     margin-top: 2vmin;
   }
   
-  /* Label Styles */
+  
   .label {
     font-size: 2.5vmin;
     color: var(--text-dark);
   }
   
-  /* Input Styles */
+
   .input {
     padding: 1vmin;
     font-size: 2vmin;
-    border: .1vmin solid var(--gray-3); /* Even lighter grey */
+    border: .1vmin solid var(--gray-3); 
     border-radius: .5vmin;
     color: var(--text-dark);
     background-image: none !important;
@@ -37,7 +37,7 @@
     margin-top: 1vmin;
   }
   
-  /* Update Button */
+
   .update-button {
     margin-top: 2vmin;
     padding: 1vmin 2vmin;
@@ -50,8 +50,7 @@
     cursor: pointer;
     outline: none;
   }
-  
-  /* Loading Message */
+
   .loading-message {
     font-size: 2vmin;
     color: var(--text-light);
@@ -59,9 +58,3 @@
     margin-top: 2vmin;
   }
   
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .edit-game-container {
-      margin: 0;
-    }
-  }

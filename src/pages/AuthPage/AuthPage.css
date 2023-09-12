@@ -1,0 +1,12 @@
+.AuthPage {
+    background-image: url('https://i.imgur.com/WDg4U32.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 130vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black; 
+  }

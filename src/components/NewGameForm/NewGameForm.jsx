@@ -65,7 +65,8 @@ export default function NewGameForm({ addGame }) {
         alt="Game Controller"
         className="game-controller-image"
       />
-    </div>
+      
+    </div> 
 
   );
 }

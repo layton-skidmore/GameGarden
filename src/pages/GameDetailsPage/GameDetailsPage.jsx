@@ -67,27 +67,21 @@ export default function GameDetailsPage({ user }) {
           {/* <h2 className="reviews-title">Reviews</h2> */}
           <ul className="reviews-list">
             {reviews.map((review, index) => (
-              <li key={index} className="review-item">
+              <li key={index} className={`review-item ${index % 2 === 0 ? 'even-item' : 'odd-item'}`}>
                 <p className="review-text">{review.text}</p>
                 <p className="review-score">Review Score: {review.score}</p>
-                <p className="review-story-rating">
-                  Story Rating: {review.storyRating}
-                </p>
-                <p className="review-gameplay-rating">
-                  Gameplay Rating: {review.gameplayRating}
-                </p>
-                <p className="review-graphics-rating">
-                  Graphics Rating: {review.graphicsRating}
-                </p>
-                <p className="review-audio-rating">
-                  Audio Rating: {review.audioRating}
-                </p>
+                <p className="review-story-rating">Story: {review.storyRating}</p>
+                <p className="review-gameplay-rating">Gameplay: {review.gameplayRating}</p>
+                <p className="review-graphics-rating">Graphics: {review.graphicsRating}</p>
+                <p className="review-audio-rating">Audio: {review.audioRating}</p>
               </li>
             ))}
           </ul>
-          <p className="overall-score">
-            Overall Score: {calculateOverallScore(reviews)}
-          </p>
+          <div className="overall-score-container">
+            <p className="overall-score">
+             {calculateOverallScore(reviews)}
+            </p>
+          </div>
         </div>
       ) : (
         <p className="no-reviews">No reviews available</p>

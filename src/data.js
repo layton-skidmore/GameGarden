@@ -1,6 +1,6 @@
 const devs = [
   {
-    name: 'Activision Blizzard',
+    name: 'Activision',
     imageUrl: 'https://i.imgur.com/epIREYf.png',
   },
   {
@@ -12,8 +12,8 @@ const devs = [
     imageUrl: 'https://pbs.twimg.com/media/DfekaqCWkAAt2X5.jpg',
   },
   {
-    name: 'Rockstar Games',
-    imageUrl: 'https://1000logos.net/wp-content/uploads/2020/09/Rockstar-Games-logo.png',
+    name: 'Rockstar',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJAogzVAelk9mFmHu26Z5jeZKcnfmzyTNrI7RURH_posU-fw6eaYL910bY4Oy9PP1X5dk&usqp=CAU',
   },
   {
     name: 'Nintendo',
@@ -41,7 +41,7 @@ const devs = [
   },
   {
     name: 'From Software',
-    imageUrl: 'https://lastfm.freetls.fastly.net/i/u/avatar170s/b905557377fd09cc71b35045771307bf'
+    imageUrl: 'https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/012011/from_soft.png?itok=EA5zFilD'
   },
   {
     name: 'BioWare',
@@ -104,7 +104,25 @@ const devs = [
   {
   name: 'Treyarch',
   imageUrl: 'https://www.insidexbox.de/wp-content/uploads/2015/02/treyarch-logo.jpg'
+  },
+  {
+    name: 'Platinum Games',
+    imageUrl: 'https://nintendosoup.com/wp-content/uploads/2018/01/platinum-games-logo-1-1038x576.jpg'
+
+  },
+  {
+    name: 'TellTale',
+    imageUrl: 'https://avatars.cloudflare.steamstatic.com/1dc3f24411b454950bd58353a740b13166e83f71_full.jpg'
+  },
+  {
+    name: "Sucker Punch",
+    imageUrl: 'https://pbs.twimg.com/media/FWl7_IHVsAEHbMB.jpg:large'
+  },
+  {
+    name: 'Raven',
+    imageUrl: 'https://cdn.mobygames.com/c4b66e9c-bc78-11ed-bde2-02420a000179.webp'
   }
+
 
 ];
 

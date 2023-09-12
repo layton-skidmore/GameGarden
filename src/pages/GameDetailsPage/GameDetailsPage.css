@@ -54,6 +54,7 @@
   
   .reviews-list {
     list-style-type: none;
+    font-size: 24px;
     padding: 0;
   }
   
@@ -95,10 +96,59 @@
 .no-reviews {
     font-size: 30px;
 }
-  
 
-  @media (max-width: 768px) {
-    .game-details-container {
-      margin: 0;
-    }
+.dropdown-container {
+    position: relative;
+    margin: 10px;
+    width: 100%;
   }
+  
+  .dropdown-container select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+ 
+  .dropdown-container::after {
+    content: '\25BC'; 
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  
+  
+  .dropdown-container select:focus,
+  .dropdown-container select:hover {
+    border-color: var(--emerald);
+    box-shadow: 0 0 5px rgba(0, 128, 0, 0.2);
+  }
+
+  .overall-score-container {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+ 
+  .overall-score {
+    font-size: 2rem; 
+    color: var(--emerald); 
+    display: inline-block;
+    padding: 10px 20px; 
+    border-radius: 50%; 
+    border: 2px solid var(--emerald); 
+  }
+
+  .even-item {
+    background-color: var(--emerald); 
+    color: white; 
+  }
+

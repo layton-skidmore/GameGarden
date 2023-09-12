@@ -35,7 +35,7 @@ export default function EditGamePage({ updateGame }) {
       await updateGame(id, updatedGameData);
       console.log('Game updated successfully');
 
-      navigate(`/games/${id}`);
+      navigate('/ ');
     } catch (error) {
       console.error("Error updating game:", error);
     }

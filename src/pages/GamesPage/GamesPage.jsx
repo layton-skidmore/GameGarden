@@ -13,7 +13,7 @@ export default function GamesPage({ games, onDelete, user }) {
               <th>Game Studio</th>
               <th>ESRB Rating</th>
               <th>Action</th>
-              <th></th> 
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -25,7 +25,7 @@ export default function GamesPage({ games, onDelete, user }) {
       ) : (
         <div className="no-games">
           <p>No Games Yet</p>
-          <img className="graphic" src="https://i.imgur.com/Rj4bGWN.jpg" alt="" />
+          <img className="graphic" src="https://i.imgur.com/yEyVFIV.png" alt="" />
         </div>
       )}
     </div>

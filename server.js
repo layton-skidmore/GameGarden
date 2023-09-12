@@ -29,7 +29,6 @@ const ensureLoggedIn = require('./config/ensureLoggedIn');
 app.use('/api/reviews', require('./routes/api/reviews'));
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/games', ensureLoggedIn, require('./routes/api/games'));
-// app.use('/api/devs', require('./routes/api/devs'));
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());

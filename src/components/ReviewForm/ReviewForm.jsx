@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { submitReviewToServer } from '../../utilities/reviews-api';
-
+import './ReviewForm.css';
 
 export default function ReviewForm() {
   const { id } = useParams();
   const navigate = useNavigate();
-  
 
   const [review, setReview] = useState({
     text: '',
@@ -46,14 +45,12 @@ export default function ReviewForm() {
     setReview({ ...review, [name]: value });
   };
 
-  
-
   return (
     <div>
       <h2>Write a Review</h2>
       <form onSubmit={handleReviewSubmit}>
         <div>
-          <label htmlFor="text">Review:</label>
+          <label>Review:</label>
           <textarea
             id="text"
             name="text"
@@ -63,7 +60,7 @@ export default function ReviewForm() {
           />
         </div>
         <div>
-          <label htmlFor="storyRating">Story Rating:</label>
+          <label>Story:</label>
           <input
             type="number"
             id="storyRating"
@@ -76,7 +73,7 @@ export default function ReviewForm() {
           />
         </div>
         <div>
-          <label htmlFor="gameplayRating">Gameplay Rating:</label>
+          <label>Gameplay:</label>
           <input
             type="number"
             id="gameplayRating"
@@ -89,7 +86,7 @@ export default function ReviewForm() {
           />
         </div>
         <div>
-          <label htmlFor="graphicsRating">Graphics Rating:</label>
+          <label>Graphics:</label>
           <input
             type="number"
             id="graphicsRating"
@@ -102,7 +99,7 @@ export default function ReviewForm() {
           />
         </div>
         <div>
-          <label htmlFor="audioRating">Audio Rating:</label>
+          <label>Audio:</label>
           <input
             type="number"
             id="audioRating"
@@ -118,15 +115,15 @@ export default function ReviewForm() {
           <button type="submit">Submit Review</button>
         </div>
       </form>
-  
+
       {submittedReview && (
         <div>
           <h3>Your Review:</h3>
           <p>Text: {submittedReview.text}</p>
-          <p>Story Rating: {submittedReview.storyRating}</p>
-          <p>Gameplay Rating: {submittedReview.gameplayRating}</p>
-          <p>Graphics Rating: {submittedReview.graphicsRating}</p>
-          <p>Audio Rating: {submittedReview.audioRating}</p>
+          <p>Story: {submittedReview.storyRating}</p>
+          <p>Gameplay: {submittedReview.gameplayRating}</p>
+          <p>Graphics: {submittedReview.graphicsRating}</p>
+          <p>Audio: {submittedReview.audioRating}</p>
         </div>
       )}
     </div>

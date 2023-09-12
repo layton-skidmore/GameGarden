@@ -1,6 +1,6 @@
 # GameGarden
 
-GameGarden is the central hub for all things gaming-related. It's the place where gamers like you can build and showcase your gaming collection while sharing your thoughts on each game. Dive into weekly top 10 lists and take part in exciting contests and giveaways designed to keep you engaged and coming back for more.
+GameGarden is the central hub for all things gaming-related. It's the place where gamers can build and showcase your gaming collection while sharing your thoughts on each game. Dive into weekly top 10 lists and take part in exciting contests and giveaways designed to keep you engaged and coming back for more.
 
 ## Technologies Used
 

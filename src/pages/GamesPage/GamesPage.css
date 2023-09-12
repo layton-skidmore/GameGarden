@@ -1,6 +1,15 @@
 .graphic {
-  height: 200px;
-  width: 200px;
+  height: 350px;
+  width: 350px;
+}
+
+.games-page {
+  background-image: url(https://i.imgur.com/MsMNK3A.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; 
+  overflow: hidden; 
 }
 
 .games-table {
@@ -28,3 +37,5 @@
   text-align: center;
   margin-top: 20px;
 }
+
+

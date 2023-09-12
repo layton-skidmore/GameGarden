@@ -10,7 +10,11 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav className="navbar">
-      <Link to="/">My GameGarden</Link>
+      <div className="nav-logo">
+      <Link to="/">
+        <img src="https://i.imgur.com/zlklMjn.png" alt="My GameGarden" />
+      </Link>
+      </div>
       &nbsp; | &nbsp;
       <Link to="/games/new">New Game</Link>
       &nbsp; | &nbsp;
