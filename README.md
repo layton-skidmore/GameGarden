@@ -1,5 +1,5 @@
 # GameGarden
-(https://i.imgur.com/aTn5Ach.png)
+![GameGarden Logo](https://i.imgur.com/aTn5Ach.png)
 
 GameGarden is the central hub for all things gaming-related. It's the place where gamers can build and showcase your gaming collection while sharing your thoughts on each game. Dive into weekly top 10 lists and take part in exciting contests and giveaways designed to keep you engaged and coming back for more.
 
@@ -13,11 +13,11 @@ GameGarden is the central hub for all things gaming-related. It's the place wher
 
 ## Screenshot(s)
 
-(https://i.imgur.com/F3EZEgr.png)
+![Screenshot 1](https://i.imgur.com/F3EZEgr.png)
 
-(https://i.imgur.com/M2KSYTl.png)
+![Screenshot 2](https://i.imgur.com/M2KSYTl.png)
 
-(https://i.imgur.com/GbY5U3Z.png)
+![Screenshot 3](https://i.imgur.com/GbY5U3Z.png)
 
 ## Getting Started
 
