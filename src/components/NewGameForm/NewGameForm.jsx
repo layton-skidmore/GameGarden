@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './NewGameForm.css'; // Import a CSS file for styling
+import './NewGameForm.css'; 
 
-export default function NewGameForm({ addGame }) {
+export default function NewGameForm({ addGame, user }) {
   const [newGame, setNewGame] = useState({
     name: '',
     gameStudio: '',
@@ -12,7 +12,8 @@ export default function NewGameForm({ addGame }) {
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    addGame(newGame);
+    const userId = user._id;
+    addGame({ ...newGame, user: userId });
     setNewGame({
       name: '',
       gameStudio: '',

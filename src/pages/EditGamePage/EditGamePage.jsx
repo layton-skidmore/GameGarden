@@ -31,11 +31,8 @@ export default function EditGamePage({ updateGame }) {
 
   const handleUpdateClick = async () => {
     try {
-      console.log('Updating game with data:', updatedGameData);
       await updateGame(id, updatedGameData);
-      console.log('Game updated successfully');
-
-      navigate('/ ');
+      navigate('/');
     } catch (error) {
       console.error("Error updating game:", error);
     }

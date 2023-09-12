@@ -20,15 +20,15 @@ export default function App() {
 
   
 
-  async function addGame(game) {
+  async function addGame(game, userId) {
     try {
-      game.user = user._id; 
-      const newGame = await gamesAPI.create(game);
-      setGames([...games, newGame]);
+        game.user = userId; // Set the user ID for the game
+        const newGame = await gamesAPI.create(game);
+        setGames([...games, newGame]);
     } catch (error) {
-      console.error('Error adding game:', error);
+        console.error('Error adding game:', error);
     }
-  }
+}
 
   async function deleteGame(gameId) {
     try {
@@ -70,7 +70,7 @@ export default function App() {
           <Routes>
             <Route
               path="/games/new"
-              element={<NewGameForm addGame={addGame} />}
+              element={<NewGameForm addGame={addGame} user={user} />}
             />
             <Route
               path="/"

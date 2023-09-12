@@ -1,15 +1,18 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Raleway&display=swap');
+
 .side-by-side {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 200px;
-    justify-content: end; /* Move the content to the right within the grid container */
+    justify-content: end; 
   }
   
   .starfield-cover {
     height: 615px;
     width: 500px;
     justify-self: end;
-    border: 7.5px outset rgb(180, 178, 178); /* Move the starfield cover to the right within its column */
+    border: 7.5px outset rgb(180, 178, 178); 
   }
   
   .whiteboard {
@@ -17,6 +20,7 @@
   }
 
   .contest-info-container {
+    font-family: 'Raleway', sans-serif;
     display: flex;
     flex-direction: column;
     text-align: center;

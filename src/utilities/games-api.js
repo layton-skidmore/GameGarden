@@ -1,5 +1,6 @@
 import sendRequest from "./send-request";
 
+
 const BASE_URL = '/api/games';
 
 export async function create(newGame) {
@@ -24,5 +25,7 @@ export async function updateGame(gameId, updatedGameData) {
     const response = await sendRequest(url, method, updatedGameData);
     return response.data; 
   }
+
+  
 
 

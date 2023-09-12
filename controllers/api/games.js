@@ -32,6 +32,7 @@ async function create(req, res) {
 async function index(req, res) {
     try {
         req.body.user = req.user._id; 
+        req.body.userName = req.user.name;
         const game = await Game.find({ user: req.user._id });
         res.json(game);
     } catch (err) {
@@ -88,9 +89,8 @@ async function update(req, res) {
     }
 
     // Update the game properties with the new data (if provided)
-    game.name = updatedGameData.name || game.name;
-    game.gameStudio = updatedGameData.gameStudio || game.gameStudio;
-
+    game.name = updatedGameData.name;
+    game.gameStudio = updatedGameData.gameStudio;
     // Save the updated game data
     await game.save();
 
