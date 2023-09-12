@@ -21,7 +21,7 @@ export default function GameCard({ game, onDelete }) {
         <Link to={`/games/${game._id}/edit`}>Edit</Link> 
       </td>
       <td>
-        <Link to={`/games/${game._id}`}>Details</Link>
+        <Link to={`/games/${game._id}`}>Review</Link>
       </td>
     </tr>
   );

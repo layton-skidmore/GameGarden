@@ -7,8 +7,8 @@ export default function WhiteBoard() {
     const [isDrawing, setIsDrawing] = useState(false);
     const [lastX, setLastX] = useState(0);
     const [lastY, setLastY] = useState(0);
-    const [currentColor, setCurrentColor] = useState('black'); 
-
+    const [currentColor, setCurrentColor] = useState('black');
+    const [lineWidth, setLineWidth] = useState(5);
 
     const handleMouseMove = (e) => {
         if (!isDrawing) return;
@@ -18,8 +18,8 @@ export default function WhiteBoard() {
         const currentX = e.nativeEvent.offsetX;
         const currentY = e.nativeEvent.offsetY;
 
-        context.strokeStyle = isErasing ? 'white' : currentColor; 
-        context.lineWidth = 5;
+        context.strokeStyle = isErasing ? 'white' : currentColor;
+        context.lineWidth = lineWidth;
         context.lineCap = 'round';
 
         context.beginPath();
@@ -60,35 +60,43 @@ export default function WhiteBoard() {
 
     return (
         <div>
-            <canvas className="board"
-                ref={boardRef}
-                width={500}
-                height={600}
-                onMouseDown={handleMouseDown}
-                onMouseMove={handleMouseMove}
-                onMouseUp={handleMouseUp}
-                onMouseOut={handleMouseOut}
-            ></canvas>
-            <div className="buttons">
-                <button className="button" onClick={toggleEraser}>
-                    {isErasing ? 'DRAW' : 'ERASE'}
-                </button>
-                <button className="button" onClick={clearBoard}>
-                    CLEAR
-                </button>
-                <button className="button" onClick={clearBoard}>
-                    SUBMIT!
-                </button>
-                <input
-                    type="color"
-                    value={currentColor}
-                    onChange={(e) => setCurrentColor(e.target.value)}
-                />
+            <div className="whiteboard-container">
+                <canvas className="board"
+                    ref={boardRef}
+                    width={500}
+                    height={600}
+                    onMouseDown={handleMouseDown}
+                    onMouseMove={handleMouseMove}
+                    onMouseUp={handleMouseUp}
+                    onMouseOut={handleMouseOut}
+                ></canvas>
+                <div className="options">
+                    <button className="button" onClick={toggleEraser}>
+                        {isErasing ? 'DRAW' : 'ERASE'}
+                    </button>
+                    <button className="button" onClick={clearBoard}>
+                        CLEAR
+                    </button>
+                    <button className="button" onClick={clearBoard}>
+                        SUBMIT!
+                    </button>
+                    <input
+                        type="color"
+                        value={currentColor}
+                        onChange={(e) => setCurrentColor(e.target.value)}
+                    />
+                    <input
+                        type="range"
+                        min="1"
+                        max="10"
+                        value={lineWidth}
+                        onChange={(e) => setLineWidth(e.target.value)}
+                    />
+                </div>
             </div>
         </div>
     );
 }
-
 
 
 

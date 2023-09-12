@@ -61,10 +61,10 @@ export default function NewGameForm({ addGame, user }) {
         </select>
         <input
           type="text"
-          name="imageUrl" // Add input field for imageUrl
+          name="imageUrl" 
           value={newGame.imageUrl}
           onChange={handleChange}
-          placeholder="Image URL"
+          placeholder="Image URL (Optional)"
         />
         <button type="submit" className="add-game-button">
           Add Game
