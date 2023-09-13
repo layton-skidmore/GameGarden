@@ -30,7 +30,6 @@ For an in-depth look at our planning process, user stories, wireframes, and the 
 Here's what we have in store for GameGarden's future:
 
 - **Friends List**: Connect with fellow gamers and expand your gaming circle.
-- **Game Covers**: Elevate the visual experience by adding game covers to your collection.
 - **More Weekly Contests and Top 10 Lists**: Keep the gaming community engaged with exciting new challenges and rankings.
 
 We're committed to making GameGarden the ultimate platform for gamers, and these enhancements are just the beginning. Stay tuned for more thrilling updates!

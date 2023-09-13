@@ -11,29 +11,16 @@
   padding: 8px;
 }
 
-.game-card a {
-  text-decoration: none;
-  color: var(--emerald);
-  font-weight: bold;
-  font-size: 2vmin;
-  margin-right: 1vmin;
-}
-
-.game-card a:hover {
-  color: var(--orange);
-  text-decoration: underline; 
-}
-
 
 .game-card:hover {
-  background-color: #e0e0e0;
+  background-color: var(--emerald);
   transition: background-color 0.3s ease; 
 }
 
 
 .game-card a {
   text-decoration: none;
-  color: var(--emerald);
+  color: #006400;
   font-weight: bold;
   font-size: 2vmin;
   margin-right: 1vmin;
@@ -41,6 +28,6 @@
 
 
 .game-card a:hover {
-  color: var(--orange);
+  color: #006400;
   text-decoration: underline;
 }

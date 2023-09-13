@@ -1,4 +1,4 @@
-import WhiteBoard from "../../components/Whiteboard/Whiteboard";
+import Canvas from "../../components/Canvas/Canvas";
 import './ContestPage.css';
 
 export default function ContestPage() {
@@ -16,7 +16,7 @@ export default function ContestPage() {
             <div className="side-by-side"> 
                 <img src="https://i.imgur.com/5IEdlWJ.jpg" alt="Starfield Cover" className="starfield-cover" />
                 <div className='whiteboard'>
-                <WhiteBoard />
+                <Canvas />
                 </div>
             </div>
             

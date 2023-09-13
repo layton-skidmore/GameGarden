@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
-import './Whiteboard.css';
+import './Canvas.css';
 
-export default function WhiteBoard() {
+export default function Canvas() {
     const boardRef = useRef(null);
     const [isErasing, setIsErasing] = useState(false);
     const [isDrawing, setIsDrawing] = useState(false);
@@ -60,7 +60,7 @@ export default function WhiteBoard() {
 
     return (
         <div>
-            <div className="whiteboard-container">
+            <div className="canvas-container">
                 <canvas className="board"
                     ref={boardRef}
                     width={500}
