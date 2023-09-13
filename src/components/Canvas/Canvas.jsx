@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import './Canvas.css';
 
 export default function Canvas() {
-    const boardRef = useRef(null);
+    const canvasRef = useRef(null);
     const [isErasing, setIsErasing] = useState(false);
     const [isDrawing, setIsDrawing] = useState(false);
     const [lastX, setLastX] = useState(0);
@@ -13,8 +13,8 @@ export default function Canvas() {
     const handleMouseMove = (e) => {
         if (!isDrawing) return;
 
-        const board = boardRef.current;
-        const context = board.getContext('2d');
+        const canvas = canvasRef.current;
+        const context = canvas.getContext('2d');
         const currentX = e.nativeEvent.offsetX;
         const currentY = e.nativeEvent.offsetY;
 
@@ -37,11 +37,11 @@ export default function Canvas() {
     };
 
     const handleMouseDown = (e) => {
-        const board = boardRef.current;
-        const boardRect = board.getBoundingClientRect();
+        const canvas = canvasRef.current;
+        const canvasRect = canvas.getBoundingClientRect();
         setIsDrawing(true);
-        setLastX(e.clientX - boardRect.left);
-        setLastY(e.clientY - boardRect.top);
+        setLastX(e.clientX - canvasRect.left);
+        setLastY(e.clientY - canvasRect.top);
     };
 
     const handleMouseUp = () => {
@@ -53,16 +53,16 @@ export default function Canvas() {
     };
 
     const clearBoard = () => {
-        const board = boardRef.current;
-        const context = board.getContext('2d');
-        context.clearRect(0, 0, board.width, board.height);
+        const canvas = canvasRef.current;
+        const context = canvas.getContext('2d');
+        context.clearRect(0, 0, canvas.width, canvas.height);
     };
 
     return (
         <div>
             <div className="canvas-container">
                 <canvas className="board"
-                    ref={boardRef}
+                    ref={canvasRef}
                     width={500}
                     height={600}
                     onMouseDown={handleMouseDown}
@@ -71,13 +71,13 @@ export default function Canvas() {
                     onMouseOut={handleMouseOut}
                 ></canvas>
                 <div className="options">
-                    <button className="button" onClick={toggleEraser}>
+                    <button onClick={toggleEraser}>
                         {isErasing ? 'DRAW' : 'ERASE'}
                     </button>
-                    <button className="button" onClick={clearBoard}>
+                    <button onClick={clearBoard}>
                         CLEAR
                     </button>
-                    <button className="button" onClick={clearBoard}>
+                    <button onClick={clearBoard}>
                         SUBMIT!
                     </button>
                     <input
