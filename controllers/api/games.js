@@ -19,7 +19,7 @@ async function create(req, res) {
       name,
       gameStudio,
       esrbRating,
-      imageUrl, // Include imageUrl in the new game object
+      imageUrl, 
       user: user._id,
     });
 
