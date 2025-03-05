@@ -21,7 +21,7 @@ GameGarden is the central hub for all things gaming-related. It's the place wher
 
 ## Getting Started
 
-To experience GameGarden, simply visit our deployed app on Heroku: [GameGarden App](https://gamegarden-cf8e1bb29052.herokuapp.com/)
+To experience GameGarden, simply visit our deployed app on Vercel: [GameGarden App](https://game-garden.vercel.app/)
 
 For an in-depth look at our planning process, user stories, wireframes, and the Entity Relationship Diagram (ERD), check out our Trello board: [GameGarden Trello Board](https://trello.com/b/7v23KAGL/project-4)
 
