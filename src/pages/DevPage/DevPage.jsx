@@ -19,7 +19,7 @@ export default function DevPage( user ) {
   return (
     <div>
     <div className="contest-info-container">
-      <h1>Weekly Top 10 (9/10/23-9/16/23)</h1>
+      <h1>Weekly Top 10 (1/10/25-1/16/25)</h1>
       <p>Select your Top 10 game studios!</p> 
     </div>
       <div className="developer-container">

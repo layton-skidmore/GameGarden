@@ -21,11 +21,8 @@ export default class SignUpForm extends Component {
     evt.preventDefault();
     const { name, email, password } = this.state;
 
-    // Skip the validation and create a dummy user
-    const user = { name, email, password };  // Create a dummy user object
-    this.props.setUser(user);  // Pass the dummy user to the parent component
-    
-    // Optionally reset the form fields if needed
+    const user = { name, email, password };  
+    this.props.setUser(user);  
     this.setState({
       name: '',
       email: '',

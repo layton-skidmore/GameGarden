@@ -8,10 +8,6 @@ const devs = [
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Electronic-Arts-Logo.svg/2048px-Electronic-Arts-Logo.svg.png',
   },
   {
-    name: 'Ubisoft',
-    imageUrl: 'https://pbs.twimg.com/media/DfekaqCWkAAt2X5.jpg',
-  },
-  {
     name: 'Rockstar',
     imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJAogzVAelk9mFmHu26Z5jeZKcnfmzyTNrI7RURH_posU-fw6eaYL910bY4Oy9PP1X5dk&usqp=CAU',
   },
@@ -66,11 +62,6 @@ const devs = [
   {
     name: 'SEGA',
     imageUrl: 'https://eu-images.contentstack.com/v3/assets/blt95b381df7c12c15d/blt6e9d7999e6151409/6254186ef80a9b6d501933fa/Sega_.png?quality=80&format=jpg&width=828'
-  },
-  {
-    name: 'Insomniac',
-    imageUrl: 'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/214677124_10159737971199853_8839568369402348054_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=LR1pozjiE6wAX9nreW0&_nc_ht=scontent-ord5-2.xx&oh=00_AfCDIFZmyq-mif22h7dL8QQ-RBtl24FVwjFt-YDKHSRsfg&oe=6503069C'
-
   },
   {
     name: 'Naughty Dog',
